@@ -14,7 +14,11 @@ class ScriptRunner(object):
         if kwargs.get('single_instance'):
             from tendo import singleton
             me = singleton.SingleInstance()
-            del(kwargs['single_instance'])
+            del(self.kwargs['single_instance'])
+
+        self.separator = self.kwargs.get('separator')
+        if self.separator is not None:
+            del(self.kwargs['separator'])
 
         self.runner()
 
@@ -30,6 +34,8 @@ class ScriptRunner(object):
             else:
                 while 1:
                     self.c(*self.args, **self.kwargs)
+                    if self.separator is not None:
+                        print(self.separator)
                     time.sleep(self.sleep)
         except KeyboardInterrupt:
             print >> sys.stderr, '\nExiting by user request.\n'
