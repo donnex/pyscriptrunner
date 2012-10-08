@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='pyscriptrunner',
-    version='1.0',
+    version='1.1',
     description='Python script runner wrapper',
     url='https://github.com/donnex/pyscriptrunner',
     packages=['scriptrunner',],
