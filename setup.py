@@ -5,7 +5,7 @@ setup(
     version='1.0',
     description='Python script runner wrapper',
     url='https://github.com/donnex/pyscriptrunner',
-    py_modules=['scriptrunner',],
+    packages=['scriptrunner',],
 
     author='Daniel Johansson',
     author_email='donnex@donnex.net',
